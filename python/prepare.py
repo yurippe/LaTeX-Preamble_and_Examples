@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 import base64
 import argparse
@@ -18,7 +20,7 @@ with open(filepath("preamble/preamble_en.tex"), "r") as preamble_en_file:
     preamble_en_content = preamble_en_file.read()
 
 with open("latexgen.py", "w") as output_script:
-    output_script.write("#!/usr/bin/env python\n\n")
+    output_script.write("#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\n")
     output_script.write("import os\nimport base64\nimport argparse\n")
     output_script.write("template = \"\"\"%s\"\"\"\n" % ( base64.encodestring(template_content) ))
     output_script.write("preamble_base = \"\"\"%s\"\"\"\n" % ( base64.encodestring(preamble_base_content) ))
